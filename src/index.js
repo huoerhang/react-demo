@@ -7,6 +7,11 @@ import ReactDom from 'react-dom'
 
 /************************************************** */
 
-//高阶组件
-import HOC from './hoc/hoc'
-ReactDom.render(<HOC title="我是高阶组件体验人员"></HOC>,document.getElementById("root"))
+//演示高阶组件
+// import HOC from './hoc/hoc'
+// ReactDom.render(<HOC title="我是高阶组件体验人员"></HOC>, document.getElementById("root"))
+
+//演示上下文
+//import Context1 from "./hoc/context1";
+import Context2 from "./hoc/context2";
+ReactDom.render(<Context2></Context2>, document.getElementById("root"))
