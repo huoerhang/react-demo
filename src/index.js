@@ -61,16 +61,23 @@ import ReactDom from 'react-dom'
 //     , document.getElementById("root"))
 
 //放到count-redux统一管理
-import { createStore,applyMiddleware } from "redux";
-import { Provider } from 'react-redux'
-import logger from 'redux-logger';
-import thunk from 'redux-thunk';
-import FirstRedux from './reduxFolder/firstRedux'
-import {firstReducer} from './reduxFolder/count-redux'
+// import { createStore,applyMiddleware } from "redux";
+// import { Provider } from 'react-redux'
+// import logger from 'redux-logger';
+// import thunk from 'redux-thunk';
+// import FirstRedux from './reduxFolder/firstRedux'
+// import {firstReducer} from './reduxFolder/count-redux'
 
-const store =createStore(firstReducer,applyMiddleware(thunk,logger))
-ReactDom.render(
-    <Provider store={store}>
-        <FirstRedux></FirstRedux>
-    </Provider>
-    , document.getElementById("root"))
+// const store =createStore(firstReducer,applyMiddleware(thunk,logger))
+// ReactDom.render(
+//     <Provider store={store}>
+//         <FirstRedux></FirstRedux>
+//     </Provider>
+//     , document.getElementById("root"))
+
+/******************************************************************** */
+
+
+//演示路由
+import RouterSample from './reactRouter/routerSample'
+ReactDom.render(<RouterSample></RouterSample>,document.getElementById("root"))
