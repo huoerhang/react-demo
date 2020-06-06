@@ -79,5 +79,11 @@ import ReactDom from 'react-dom'
 
 
 //演示路由
-import RouterSample from './reactRouter/routerSample'
+// import RouterSample from './reactRouter/routerSample'
+// ReactDom.render(<RouterSample></RouterSample>,document.getElementById("root"))
+
+/********************************************************************** */
+
+//redux-saga重写登录
+import RouterSample from './reduxSaga/routerSample'
 ReactDom.render(<RouterSample></RouterSample>,document.getElementById("root"))
