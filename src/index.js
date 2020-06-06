@@ -36,5 +36,41 @@ import ReactDom from 'react-dom'
 // ReactDom.render(<OtherHooks></OtherHooks>,document.getElementById("root"))
 
 //演示自定义Hooks
-import CustomHooks from "./hooks/useChangeTitle";
-ReactDom.render(<CustomHooks></CustomHooks>,document.getElementById("root"))
+// import CustomHooks from "./hooks/useChangeTitle";
+// ReactDom.render(<CustomHooks></CustomHooks>,document.getElementById("root"))
+/************************************************************************** */
+
+//演示redux
+//编写第一个redux累加器
+// import FirstRedux from "./reduxFolder/firstRedux";
+// import Store from './reduxFolder/store';
+// const render=()=>{
+//     ReactDom.render(<FirstRedux></FirstRedux>, document.getElementById("root"))
+// }
+// render()
+// Store.subscribe(render)
+
+//使用react-redux
+// import FirstRedux from "./reduxFolder/firstRedux";
+// import Store from './reduxFolder/store';
+// import { Provider } from 'react-redux'
+// ReactDom.render(
+//     <Provider store={Store}>
+//         <FirstRedux></FirstRedux>
+//     </Provider>
+//     , document.getElementById("root"))
+
+//放到count-redux统一管理
+import { createStore,applyMiddleware } from "redux";
+import { Provider } from 'react-redux'
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
+import FirstRedux from './reduxFolder/firstRedux'
+import {firstReducer} from './reduxFolder/count-redux'
+
+const store =createStore(firstReducer,applyMiddleware(thunk,logger))
+ReactDom.render(
+    <Provider store={store}>
+        <FirstRedux></FirstRedux>
+    </Provider>
+    , document.getElementById("root"))
