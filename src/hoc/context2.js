@@ -7,14 +7,14 @@ const store = {
 }
 
 //2.创建上下文
-const Context = React.createContext();
-// const { Provider, Consumer } = Context;
+//const Context = React.createContext();
+ const { Provider, Consumer } = Context;
 
 class Info extends Component {
     render() {
         return (
 
-            <Context.Consumer>
+            <Consumer>
                 {
                     store => {
                         return (
@@ -25,7 +25,7 @@ class Info extends Component {
                         )
                     }
                 }
-            </Context.Consumer>
+            </Consumer>
         )
     }
 }
@@ -41,9 +41,9 @@ export default class Context2 extends Component {
     render() {
         return (
             <div>
-                <Context.Provider value={store}>
+                <Provider value={store}>
                     <ToolBar></ToolBar>
-                </Context.Provider>
+                </Provider>
             </div>
         )
     }
